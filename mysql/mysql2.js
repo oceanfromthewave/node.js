@@ -7,14 +7,14 @@ require('dotenv').config();// yarn add dotenv
 const connection = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.DB_USER,
-  password:process.env.PASSWORD,
+  password: process.env.PASSWORD,
   database: process.env.DATABASE,
 });
 
 // simple query
 connection.query(
   'SELECT * FROM topic',
-  function(err, results, fields) {
+  function (err, results, fields) {
     console.log(err);
     console.log(results); // results contains rows returned by server
     console.log(fields); // fields contains extra meta data about results, if available
